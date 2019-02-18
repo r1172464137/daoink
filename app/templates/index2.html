@@ -8,17 +8,19 @@
 
     <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 		">
-
-    <link rel="stylesheet" href="../static/lib/weui.min.css">
-    <link rel="stylesheet" href="../static/css/jquery-weui.css">
-    <link rel="stylesheet" href="../static/mycss/demos.css">
+	<!--- CSS --->   
+    <link rel="stylesheet" href="../static/css/jquery-weui.css">   
     <link rel="stylesheet" href="../static/css/light7.css">
     <link rel="stylesheet" href="../static/css/app.css">
-    <link href="../static/lib/swiper.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/lib/weui.min.css">
+    <link rel="stylesheet" href="../static/lib/swiper.css">
+    <link rel="stylesheet" href="../static/mycss/demos.css">
+    <link rel="stylesheet" href="../static/mycss/homepage.css">
+    	
+    <!--- JS --->	
     <script src="../static/lib/jquery-2.1.4.js"></script>
-    <script src="../static/js/bootstrap.js"></script>
-    
-   	<style>
+    <script src="../static/js/bootstrap.js"></script> 
+    <style>
    		.weui-form-preview{
    			margin-left: 15px;
    			margin-right: 15px;
@@ -31,12 +33,18 @@
 			border-color: #E9E9E9;
 			margin: auto;
 			background-color: #FAFAFA;
+<<<<<<< HEAD
 			height: 200px;
             width: 200px;
 {#			border-bottom-left-radius: 5em;#}
 {#            border-bottom-right-radius: 0.5em;#}
 
             border-radius: 1.4em;
+=======
+			height: 300px;
+			border-bottom-left-radius: 5em;
+			border-bottom-right-radius: 0.5em;
+>>>>>>> beta2
 		}
 	    .swiper-container {
 	        width: 100%;
@@ -49,12 +57,17 @@
 </head>
 
 <body ontouchstart>
+<<<<<<< HEAD
     <script src="/static/lib/jquery-2.1.4.js"></script>
+=======
+    <script src="../static/lib/jquery-2.1.4.js"></script>
+>>>>>>> beta2
     <script>
         var UserName = '{{ g.current_userphone }}' // 后端数据
     </script>
 
 	<div class="weui-tab">
+<<<<<<< HEAD
 	    <div class="weui-tab__bd">
 	        <!--页面一-->
 	        <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
@@ -94,6 +107,17 @@
 	                    <div class="weui-search-bar__box">
 	                        <i class="weui-icon-search"></i>
 	                        <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
+=======
+	    <div class="weui-tab__bd">	    	
+	    	<!--页面一-->
+	        <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active" style="background-color: #EEEEEE;">
+	        	<!--搜索-->
+	            <div class="weui-search-bar" id="searchBar">
+	                <form class="weui-search-bar__form" action="#">
+	                    <div class="weui-search-bar__box" style="border-radius: 10em;">
+	                        <i class="weui-icon-search"></i>
+	                        <input type="search" class="weui-search-bar__input" placeholder="搜索" required="">
+>>>>>>> beta2
 	                        <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
 	                    </div>
 	                    <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
@@ -101,7 +125,12 @@
 	                        <span>搜索</span>
 	                    </label>
 	                </form>
+<<<<<<< HEAD
 	                <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel" style="color: white;">取消</a>
+=======
+	                <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel" style="color:#1AAD19;margin-left: -6px;margin-right: 10px;">取消</a>
+	                <img src="../static/images/code.png" href=""/>
+>>>>>>> beta2
 	            </div>
 				<!--幻灯片-->
                 <div class="swiper-container" style="margin-bottom: -10px;">
@@ -115,6 +144,7 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
+<<<<<<< HEAD
                                 <img src="../static/images/bg4.jpg" alt="...">
                             </div>
                             <div class="item">
@@ -122,6 +152,15 @@
                             </div>
                             <div class="item">
                                 <img src="../static/images/bg5.jpg" alt="...">
+=======
+                                <img src="../static/images/bg3.jpg" alt="...">
+                            </div>
+                            <div class="item">
+                                <img src="../static/images/bg6.jpg" alt="...">
+                            </div>
+                            <div class="item">
+                                <img src="../static/images/bg7.jpg" alt="...">
+>>>>>>> beta2
                             </div>
                         </div>
                         <!-- Controls -->
@@ -136,6 +175,7 @@
                     </div>
                 </div>
 				<!--九宫格-->
+<<<<<<< HEAD
 			    <div class="weui-grids" style="background-color: #EEEEEE;border-top-left-radius: 1em;border-top-right-radius: 1em;z-index: 999;">
 			      <a href="/detailedu" class="weui-grid js_grid">
 			        <div class="weui-grid__icon">
@@ -212,14 +252,159 @@
 				  <div class="weui-panel__ft">
 				    <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
 				      <div class="weui-cell__bd">查看更多</div>
+=======
+			    <div class="weui-grids">
+			      <a href="/select" class="weui-grid js_grid">
+			        <div class="weui-grid__icon">
+			          <img src="../static/images/print.png" alt="">
+			        </div>
+			        <p class="weui-grid__label">
+			          	打印入口
+			        </p>
+			      </a>
+			      <a href="/docshare" class="weui-grid js_grid">
+			        <div class="weui-grid__icon">
+			          <img src="../static/images/share.png" alt="">
+			        </div>
+			        <p class="weui-grid__label">
+			          	资料共享
+			        </p>
+			      </a>
+			      <a href=" " class="weui-grid js_grid">
+			        <div class="weui-grid__icon">
+			          <img src="../static/images/serve.png" alt="">
+			        </div>
+			        <p class="weui-grid__label">
+			          	其他服务
+			        </p>
+			      </a>			      			      
+			    </div>
+			    <!--推送-->
+			    <div class="weui-panel weui-panel_access" style="border-bottom-left-radius: 0.5em;border-bottom-right-radius: 0.5em;margin-left: 10px;margin-right: 10px;margin-top: -1px;">				  			  
+				  <div class="weui-panel__ft">
+				    <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
+				      <img src="../static/images/icon-head-notice.png" style="margin-right: 10px;">
+				      <div class="weui-cell__bd">已更新资料共享</div>
+>>>>>>> beta2
 				      <span class="weui-cell__ft"></span>
 				    </a>    
 				  </div>
 				</div>
+<<<<<<< HEAD
 	        </div>
 	
 	        <!--页面三-->
 	        <div id="tab3" class="weui-tab__bd-item" style="background-color: #EEEEEE;">
+=======
+				<!--排序-->
+				<div class="tab-title">附近机器</div>
+				<div class="container">					
+					<div class="tab-wrapper">
+						<!--综合排序-->
+						<input type="radio" name="tab-radio" class="tab-radio" id="tab-radio-1" checked>
+						<label for="tab-radio-1" class="tab-handler tab-handler-1">综合排序</label>
+						<div class="tab-content tab-content-1">
+							<div class="page__pd"> <!--附近打印机开始-->
+						      <div class="weui-panel weui-panel_access">
+						        <div class="weui-panel__bd">
+						          <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+						            <div class="weui-media-box__hd">
+						              <img class="weui-media-box__thumb" src="../static/images/online.png" alt="">
+						            </div>
+						            <div class="weui-media-box__bd">
+						              <h4 class="weui-media-box__title">
+						               	西安理工大学金花校区教六2楼西
+						              </h4>
+						              <p class="weui-media-box__desc">月订单:  88</p>
+						              <span class="weui-media-box__title-after" id="online">在线</span>
+						              <p class="weui-media-box__desc">1.5km</p>
+						            </div>
+						          </a>
+						          <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+						            <div class="weui-media-box__hd">
+						              <img class="weui-media-box__thumb" src="../static/images/offline.png" alt="">
+						            </div>
+						            <div class="weui-media-box__bd">
+						              <h4 class="weui-media-box__title">
+						               	西安理工大学金花校区教六4楼西
+						              </h4>
+						              <p class="weui-media-box__desc">月订单:  152</p>
+						              <span class="weui-media-box__title-after" id="offline">离线</span>
+						              <p class="weui-media-box__desc">2.5km</p>
+						            </div>
+						          </a>
+						        </div>
+						      </div>
+						    </div>	<!--附近打印机结束-->					    
+						</div>
+						<!--按距离排序-->
+						<input type="radio" name="tab-radio" class="tab-radio" id="tab-radio-2">
+						<label for="tab-radio-2" class="tab-handler tab-handler-2">距离</label>
+						<div class="tab-content tab-content-2">
+							<div class="page__pd"> <!--附近打印机开始-->
+						      <div class="weui-panel weui-panel_access">
+						        <div class="weui-panel__bd">
+						          <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+						            <div class="weui-media-box__hd">
+						              <img class="weui-media-box__thumb" src="../static/images/online.png" alt="">
+						            </div>
+						            <div class="weui-media-box__bd">
+						              <h4 class="weui-media-box__title">
+						               	西安理工大学金花校区教六2楼西
+						              </h4>
+						              <p class="weui-media-box__desc">月订单:  88</p>
+						              <span class="weui-media-box__title-after" id="online">在线</span>
+						              <p class="weui-media-box__desc">1.5km</p>
+						            </div>
+						          </a>
+						        </div>
+						      </div>
+						    </div>	<!--附近打印机结束-->
+						</div>
+						<!--按销量排序-->
+						<input type="radio" name="tab-radio" class="tab-radio" id="tab-radio-3">
+						<label for="tab-radio-3" class="tab-handler tab-handler-3">销量</label>
+						<div class="tab-content tab-content-3">
+							<div class="page__pd"> <!--附近打印机开始-->
+						      <div class="weui-panel weui-panel_access">
+						        <div class="weui-panel__bd">
+						          <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+						            <div class="weui-media-box__hd">
+						              <img class="weui-media-box__thumb" src="../static/images/offline.png" alt="">
+						            </div>
+						            <div class="weui-media-box__bd">
+						              <h4 class="weui-media-box__title">
+						               	西安理工大学金花校区教六4楼西
+						              </h4>
+						              <p class="weui-media-box__desc">月订单:  152</p>
+						              <span class="weui-media-box__title-after" id="offline">离线</span>
+						              <p class="weui-media-box__desc">2.5km</p>
+						            </div>
+						          </a>
+						          <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+						            <div class="weui-media-box__hd">
+						              <img class="weui-media-box__thumb" src="../static/images/online.png" alt="">
+						            </div>
+						            <div class="weui-media-box__bd">
+						              <h4 class="weui-media-box__title">
+						               	西安理工大学金花校区教六2楼西
+						              </h4>
+						              <p class="weui-media-box__desc">月订单:  88</p>
+						              <span class="weui-media-box__title-after" id="online">在线</span>
+						              <p class="weui-media-box__desc">1.5km</p>
+						            </div>
+						          </a>
+						        </div>
+						      </div>
+						    </div>	<!--附近打印机结束-->
+						</div>
+					</div>
+				</div>			    
+	        </div>
+	
+	        <!--页面二-->
+	        <div id="tab2" class="weui-tab__bd-item" style="background-color: #EEEEEE;">
+>>>>>>> beta2
 	            <header class='demos-header' style="background-image: url(/static/images/bg2.jpg);background-size: 100%;background-position: 100% 30%;">
 	                <h1 style="color: #52A341;margin-left: 16px;margin-top:15px;margin-bottom:10px;font-size: x-large;">历史订单</h1>                
 	            </header>
@@ -290,7 +475,10 @@
                     {% endif %}
                 </div>
 
+<<<<<<< HEAD
 	
+=======
+>>>>>>> beta2
 			<!--数据分页-->
 	        <div id="box">
 	
@@ -395,10 +583,17 @@
 
 	                });
 	            </script>
+<<<<<<< HEAD
         </div>
 	
 			<!--页面四-->
 			<div id="tab4" class="weui-tab__bd-item" style="background-color: #eee;">
+=======
+        	</div>
+	
+			<!--页面三-->
+			<div id="tab3" class="weui-tab__bd-item" style="background-color: #eee;">
+>>>>>>> beta2
 				<header class="bar bar-nav">
 				    <h1 class="title">个人主页</h1>
 				</header>
@@ -477,12 +672,17 @@
 	        <div class="weui-tabbar">
 	            <a href="#tab1" class="weui-tabbar__item weui-bar__item--on">
 	                <div class="weui-tabbar__icon">
+<<<<<<< HEAD
 	                    <img src="/static/images/home.png" alt="">
+=======
+	                    <img src="../static/images/home.png" alt="">
+>>>>>>> beta2
 	                </div>
 	                <p class="weui-tabbar__label">首页</p>
 	            </a>
 	            <a href="#tab2" class="weui-tabbar__item">
 	                <div class="weui-tabbar__icon">
+<<<<<<< HEAD
 	                    <img src="/static/images/data.png" alt="">
 	                </div>
 	                <p class="weui-tabbar__label">资料共享</p>
@@ -496,12 +696,22 @@
 	            <a href="#tab4" class="weui-tabbar__item">
 	                <div class="weui-tabbar__icon">
 	                    <img src="/static/images/member.png" alt="">
+=======
+	                    <img src="../static/images/icon_nav_article.png" alt="">
+	                </div>
+	                <p class="weui-tabbar__label">订单</p>
+	            </a>
+	            <a href="#tab3" class="weui-tabbar__item">
+	                <div class="weui-tabbar__icon">
+	                    <img src="../static/images/member.png" alt="">
+>>>>>>> beta2
 	                </div>
 	                <p class="weui-tabbar__label">我的</p>
 	            </a>
 	        </div>
 	    </div>
 	</div>
+<<<<<<< HEAD
 
 	<style>
 	    .weui-footer {
@@ -510,6 +720,10 @@
 	</style>
 	
 	<script src="/static/lib/fastclick.js"></script>
+=======
+	
+	<script src="../static/lib/fastclick.js"></script>
+>>>>>>> beta2
 	<script>
 	    $(function() {
 	        FastClick.attach(document.body);
@@ -521,8 +735,13 @@
 	        window.location.href='/join';
 	    });
 	</script>
+<<<<<<< HEAD
 	<script src="/static/js/jquery-weui.js"></script>
     <script src="/static/js/swiper.js"></script>
+=======
+	<script src="../static/js/jquery-weui.js"></script>
+    <script src="../static/js/swiper.js"></script>
+>>>>>>> beta2
 
     <script>
       $(".swiper-container").swiper({
