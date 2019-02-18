@@ -33,7 +33,7 @@ def index():
         tem = []
         for x in user_order:
             tem.append(x.to_json())
-        # return render_template('index2.html', user_order=user_order, lenth=lenth, pagination=pagination)
+        # return render_template('index.html', user_order=user_order, lenth=lenth, pagination=pagination)
         print jsonify(tem)
         return jsonify(objects = tem)
     if g.current_user != None:
@@ -46,7 +46,7 @@ def index():
         pagination = Order.query.filter(Order.User_Id == g.current_user.Id).order_by(Order.Id.desc()).paginate(page, per_page=10, error_out=False)
         user_order = pagination.items
         lenth = len(user_order)
-        return render_template('index2.html', user_order=user_order, lenth=lenth, pagination=pagination)
+        return render_template('index.html', user_order=user_order, lenth=lenth, pagination=pagination)
     else:
         user_order = None
         lenth = 0
@@ -74,4 +74,4 @@ app.register_blueprint(document_share)
 app.register_blueprint(daoinkpay)
 
 if __name__ == '__main__':
-    app.run(host='192.168.3.5', port=80)
+    app.run(host='192.168.43.170', port=80)
