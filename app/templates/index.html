@@ -256,15 +256,20 @@
                 <div id="firstpage">
                    {% if g.current_user == None %}
                         <div class="weui-flex">
-                            <div class="weui-flex__item">
-                                <i class="weui-icon-info weui-icon_msg" style="margin-left: 37%"></i>
+                            <div class="weui-flex__item text-center">
+                                <img src="../static/images/lovelygirl.png" style="width: 8rem;height: 8rem">
                             </div>
                         </div>
                         <div class="weui-flex">
-                            <div class="weui-flex__item">
-                                <label style="margin-left: 36%">您还没有登陆！</label>
+                            <div class="weui-flex__item text-center">
+                                <label style="color: #666;">登录后查看打印订单</label>
                             </div>
                         </div>
+                       <div class="weui-flex">
+                           <div class="weui-flex__item" style="margin-left: 100px; margin-right: 100px">
+                               <a href="/login"><input class="weui-btn weui-btn_default" type="button" value="立即登录" style="background-color: #4cd964;color: white;width: 70%;"></a>
+                           </div>
+                       </div>
                     {% else %}
                         {% if lenth != 0 %}
                             {% for i in range(lenth) %}
@@ -356,7 +361,8 @@
                     </div>
                 </div>
 	        </div>
-	        
+
+            {% if g.current_user != None %}
 	            {% if pagination.pages >= 1 %}
 	            <div align="center">
 	                <select id="pages" style="margin-bottom: 80px;">
@@ -366,6 +372,7 @@
 	                </select>           	
 	            </div>
 	            {% endif %}
+            {% endif %}
 	            <script>
 	                $("#pages").change(function(){
 	                    $("#money").text("");
@@ -441,7 +448,7 @@
 					              <div class="item-media"><img src="/static/images/roo.gif" width="80"></div>
 					              <div class="item-inner">
 					                <div class="item-title-row">
-					                  <div class="item-title" style="margin-top: 5px;">{{ g.current_userphone }}</div>
+					                  <div class="item-title" style="margin-top: 5px;">{% if g.current_userphone != 'null' %}{{ g.current_userphone }}{% endif %}</div>
 					                </div>
 					                {% if g.current_userphone != 'null' %}
 			                        <div class="item-subtitle" style="margin-top: 5px;">
@@ -449,7 +456,7 @@
 			                        </div>
 				                    {% else %}
 				                        <div class="item-subtitle" style="margin-top: 5px;">
-				                            <a href="/select">请登录</a>
+				                            <a href="/login">立即登录</a>
 				                        </div>
 				                    {% endif %}
 					              </div>

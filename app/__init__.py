@@ -50,7 +50,8 @@ def index():
     else:
         user_order = None
         lenth = 0
-        return redirect('/login')
+        return render_template('index.html')
+        # return redirect('/login')
         # return render_template('index.html', user_order=user_order, lenth=lenth)
 
 
