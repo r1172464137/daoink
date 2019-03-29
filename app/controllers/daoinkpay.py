@@ -40,7 +40,7 @@ alipay = AliPay(
 
 # 手机网站支付，需要跳转到https://openapi.alipay.com/gateway.do? + order_string
 
-# 支付宝支付跳转链接
+# 手机支付宝支付跳转链接
 @daoinkpay.route('/pay', methods=['POST', 'GET'])
 def pay():
     cost = request.form.get("cost")
@@ -48,6 +48,23 @@ def pay():
     tradeid = request.form.get("tradeid")
 
     order_string = alipay.api_alipay_trade_wap_pay(
+        out_trade_no=tradeid,
+        total_amount=cost,
+        subject="道墨云印订单",
+        return_url="http://www.daoink.com/alipayresult1",
+        notify_url="" # 可选, 不填则使用默认notify url
+    )
+    url = "https://openapi.alipay.com/gateway.do?" + order_string
+    return redirect(url)
+
+# PC网站支付
+@daoinkpay.route('/pay2', methods=['POST', 'GET'])
+def pay2():
+    cost = request.form.get("cost")
+    cost = float(cost)
+    tradeid = request.form.get("tradeid")
+
+    order_string = alipay.api_alipay_trade_page_pay(
         out_trade_no=tradeid,
         total_amount=cost,
         subject="道墨云印订单",
@@ -71,6 +88,11 @@ def alipayresult1():
     # verify
     success = alipay.verify(data, signature)
     if success:
+        result_order = Order.query.filter(Order.File_Dir == trade_out_id).first()
+        result_order.Print_Status = 1
+        result_order.Trade_Number = request.args.get("trade_no")
+        db.session.add(result_order)
+        db.session.commit()
         result = 1
         return render_template('result.html', result=result)
 
