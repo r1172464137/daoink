@@ -27,7 +27,7 @@ def select():
         print_way = request.form.get("print_way")       # 单双面
         time_way = request.form.get("time_way")         # 预约或自动排队
         pageCount = 1                                   # 文件页数
-        cost = 0.2
+        cost = 0.2*int(copies)
 
 
         filename = printfile.filename
@@ -125,7 +125,7 @@ def select2():
         print_way = request.form.get("print_way")       # 单双面
         time_way = request.form.get("time_way")         # 预约或自动排队
         pageCount = 1                                   # 文件页数
-        cost = 0.01
+        cost = 0.2*int(copies)
 
 
         filename = printfile.filename
