@@ -104,10 +104,10 @@ select::-ms-expand { display: none; }
 .weui-media-box__title-after{
 	margin-top: -12px;
 }		
-#online{
+.online{
 	color: #00B555;
 }	
-#offline{
+.offline{
 	color: #999999;
 }
 .weui-footer {

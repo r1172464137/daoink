@@ -153,32 +153,33 @@
 							<div class="page__pd"> <!--附近打印机开始-->
 						      <div class="weui-panel weui-panel_access">
 						        <div class="weui-panel__bd">
-						          <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+						          <a href="javascript:void(0);" id="printer_1_href" class="weui-media-box weui-media-box_appmsg">
 						            <div class="weui-media-box__hd">
-						              <img class="weui-media-box__thumb" src="../static/images/online.png" alt="">
+						              <img id="printer_1" class="weui-media-box__thumb" src="../static/images/online.png" alt="">
 						            </div>
 						            <div class="weui-media-box__bd">
 						              <h4 class="weui-media-box__title">
-						               	西安理工大学金花校区教六2楼西
+						               	西安理工大学金花校区西四宿舍楼714
 						              </h4>
 						              <p class="weui-media-box__desc">月订单:  88</p>
-						              <span class="weui-media-box__title-after" id="online">在线</span>
+						              <span class="weui-media-box__title-after" id="printer_1_text" style="color: ">
+                                          在线</span>
 						              <p class="weui-media-box__desc">1.5km</p>
 						            </div>
 						          </a>
-						          <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-						            <div class="weui-media-box__hd">
-						              <img class="weui-media-box__thumb" src="../static/images/offline.png" alt="">
-						            </div>
-						            <div class="weui-media-box__bd">
-						              <h4 class="weui-media-box__title">
-						               	西安理工大学金花校区教六4楼西
-						              </h4>
-						              <p class="weui-media-box__desc">月订单:  152</p>
-						              <span class="weui-media-box__title-after" id="offline">离线</span>
-						              <p class="weui-media-box__desc">2.5km</p>
-						            </div>
-						          </a>
+{#						          <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">#}
+{#						            <div class="weui-media-box__hd">#}
+{#						              <img class="weui-media-box__thumb" src="../static/images/offline.png" alt="">#}
+{#						            </div>#}
+{#						            <div class="weui-media-box__bd">#}
+{#						              <h4 class="weui-media-box__title">#}
+{#						               	西安理工大学金花校区教六4楼西#}
+{#						              </h4>#}
+{#						              <p class="weui-media-box__desc">月订单:  152</p>#}
+{#						              <span class="weui-media-box__title-after" id="offline">离线</span>#}
+{#						              <p class="weui-media-box__desc">2.5km</p>#}
+{#						            </div>#}
+{#						          </a>#}
 						        </div>
 						      </div>
 						    </div>	<!--附近打印机结束-->					    
@@ -532,7 +533,35 @@
 	        </div>
 	    </div>
 	</div>
-	
+	<script>
+        function get_printer_status() {
+            $.ajax({								// 提交获取打印机状态POST请求给后端
+                type: 'POST',
+                url: '/get_printer_status',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.status == 1){
+                        <!-- 在线 -->
+                        $("#printer_1").attr('src', '../static/images/online.png');
+                        $("#printer_1_text").text("在线");
+                        $("#printer_1_text").css("color", "#00B555");
+                        $("#printer_1_href").attr('href', '/select');
+                    }
+                    else {
+                        $("#printer_1").attr('src', '../static/images/offline.png');
+                        $("#printer_1_text").text("离线");
+                        $("#printer_1_text").css("color", "#999999");
+                        $("#printer_1_href").attr('href', 'javascript:void(0);');
+                    }
+                },
+                error: function () {
+                }
+                })
+        }
+        $(function(){
+            setInterval('get_printer_status();', 3000);
+        });
+    </script>
 	<script src="../static/lib/fastclick.js"></script>
 	<script>
 	    $(function() {
