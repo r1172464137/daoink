@@ -12,8 +12,8 @@ REDIS_PRINTER_KEY = 'test_printer'
 
 # Redis connect config
 class RedisConfig:
-    host = "60.205.176.255"
-    password = "Blqrwuzg3"
+    host = "www.yourhostname.com"           # redis服务器主机地址
+    password = "your_redis_password"        # redis密码
     port = 6379
 
     def __init__(self, host, password, port):
